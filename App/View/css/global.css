@@ -6,3 +6,33 @@
   box-sizing: border-box;
   font-family: "Poppins" , sans-serif;
 }
+
+/* Main */
+
+body{
+  display: flex;
+  justify-content: space-around;
+}
+
+.main-container{
+  margin-left: 5%;
+  width: 92vw;  
+  height: 100vh;  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.2s; 
+}
+
+.main-alt-size{
+  width: 84vw; 
+  margin-left: 13%;
+  transition: 0.2s; 
+}
+
+.container-card{
+  width: 100%;
+  height: 95%;
+  background-color: white;
+  border-radius: 10px;
+}

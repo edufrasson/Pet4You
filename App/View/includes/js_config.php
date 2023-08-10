@@ -2,6 +2,7 @@
     Este é um arquivo responsável por armazenar itens relacionados ao js da
     sua aplicação, seja ele links de frameworks e muito mais.
 -->
+<script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 
 <script src="./../../View/bootstrap/js/bootstrap.bundle.min.js"></script>
 
@@ -13,8 +14,10 @@
       searchBtn = body.querySelector(".search-box"),
       modeSwitch = body.querySelector(".toggle-switch"),
       modeText = body.querySelector(".mode-text");
+      mainContainer = body.querySelector(".main-container");
 toggle.addEventListener("click" , () =>{
     sidebar.classList.toggle("close");
+    mainContainer.classList.toggle("main-alt-size");
 })
 searchBtn.addEventListener("click" , () =>{
     sidebar.classList.remove("close");

@@ -10,8 +10,12 @@
 
 <body>
 
-        <?php include 'View/includes/navbar.php' ?>
-  
+    <?php include 'View/includes/navbar.php' ?>
+    <main class="main-container">
+        <div class="container-card">
+            
+        </div>
+    </main>
     
     <?php include 'View/includes/js_config.php' ?>
 </body>

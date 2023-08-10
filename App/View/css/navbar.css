@@ -126,7 +126,8 @@ header .image-text .profession{
     justify-content: center;
     font-size: 22px;
     cursor: pointer;
-    transition: var(--tran-05);
+    /*transition: var(--tran-05);*/
+    transition: 0.2s;
 }
 body.dark .sidebar header .toggle{
     color: var(--text-color);
