@@ -7,3 +7,4 @@
 <link rel="stylesheet" href="View/css/global.css">
 <link rel="stylesheet" href="View/css/navbar.css">
 <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<link rel="stylesheet" href="View/js/DataTables/datatables.min.css">

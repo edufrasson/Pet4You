@@ -5,7 +5,8 @@
 <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 
 <script src="./../../View/bootstrap/js/bootstrap.bundle.min.js"></script>
-
+<script src="View/js/DataTables/datatables.min.js"></script>
+<script src="View/js/jquery.global.js"></script>
 <!--  JS da Navbar -->
 <script>
         const body = document.querySelector('body'),

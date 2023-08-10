@@ -1,17 +1,32 @@
 /* Google Font Link */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+:root{
+  /* ===== Colors ===== */
+  --body-color: #f5f3d6;
+  --sidebar-color: #FFF;
+  --primary-color: #eb5cfe;
+  --primary-color-light: #F6F5FF;
+  --toggle-color: #DDD;
+  --text-color: #707070;
+  /* ====== Transition ====== */
+  --tran-03: all 0.2s ease;
+  --tran-03: all 0.3s ease;
+  --tran-04: all 0.3s ease;
+  --tran-05: all 0.3s ease;
+}
+@import url('https://fonts.googleapis.com/css3?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins" , sans-serif;
+
 }
 
-/* Main */
+/* MAIN */
 
 body{
   display: flex;
   justify-content: space-around;
+  font-family: 'Poppins' , sans-serif;
 }
 
 .main-container{
@@ -30,9 +45,55 @@ body{
   transition: 0.2s; 
 }
 
+.btn-pet{
+  background-color: var(--primary-color);
+}
+/* CONTAINER */
 .container-card{
   width: 100%;
   height: 95%;
   background-color: white;
   border-radius: 10px;
+}
+
+.containers-card{
+  width: 100%;  
+  padding: 20px;
+}
+
+.header-card{
+  width: 100%;
+  height: 8%;
+  padding: 20px; 
+}
+
+.text-container-header-card{
+  font-size: 25px;
+}
+
+/* COMANDOS PARA RESPONSIVIDADE */
+@media screen and (max-width: 1600px){
+  .main-container{
+    width: 90vw;
+    margin-left: 6%;
+  }
+}
+
+@media screen and (max-width: 1380px){
+  .main-container{
+    margin-left: 7%;
+  }
+}
+
+@media screen and (max-width: 1180px){
+  .main-container{
+    margin-left: 8%;
+  }
+}
+
+@media screen and (max-width: 1080px){
+  .main-container{
+    width: 88vw;
+    margin-left: 9%;
+  }
 }
