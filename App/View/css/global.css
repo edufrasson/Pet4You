@@ -4,8 +4,8 @@
   --body-color: #f5f3d6;
   --sidebar-color: #FFF;
   --primary-color: #eb5cfe;
-  --primary-color-light: #F6F5FF;
-  --toggle-color: #DDD;
+  --primary-color-light: #eaa2f3;
+  --toggle-color: #eaa2f3;
   --text-color: #707070;
   /* ====== Transition ====== */
   --tran-03: all 0.2s ease;
@@ -48,6 +48,10 @@ body{
 .btn-pet{
   background-color: var(--primary-color);
 }
+
+.btn-pet:hover{
+  background-color: var(--primary-color-light) !important;
+}
 /* CONTAINER */
 .container-card{
   width: 100%;
@@ -69,6 +73,12 @@ body{
 
 .text-container-header-card{
   font-size: 25px;
+}
+
+.modal-body{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 /* COMANDOS PARA RESPONSIVIDADE */

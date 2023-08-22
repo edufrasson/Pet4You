@@ -7,6 +7,7 @@
 <script src="./../../View/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="View/js/DataTables/datatables.min.js"></script>
 <script src="View/js/jquery.global.js"></script>
+<script src="View/js/plugin/jquery.maskedinput.js"></script>
 <!--  JS da Navbar -->
 <script>
         const body = document.querySelector('body'),
