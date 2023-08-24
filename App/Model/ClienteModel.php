@@ -32,7 +32,7 @@ class ClienteModel extends Model {
 
         $obj = $dao->selectById($id);
 
-        return ($obj) ? $obj : new CategoriaModel();
+        return ($obj) ? $obj : new ClienteModel();
     }
   
     public function delete(int $id)
