@@ -1,26 +1,44 @@
 <?php
 namespace App\Model;
 
+use App\DAO\ClienteDAO;
+
 class ClienteModel extends Model {
-	public $id;
+	public $id, $nome, $cpf, $data_nasc;
 
-	public function save() 
-	{
+	public function save()
+    {
+        $dao = new ClienteDAO();
+        
+        if(empty($this->id))
+        {
+            return $dao->insert($this);
+        }
+        else
+            $dao->update($this);
+        
+    }
 
-	}
+    public function getAllRows()
+    {
+        $dao = new ClienteDAO();
 
-	public function getAllRows() 
-	{
+        $this->rows = $dao->select();
+    }
 
-	}
+    public function getById(int $id)
+    {
+        $dao = new ClienteDAO();
 
-	public function delete(int $id) 
-	{
+        $obj = $dao->selectById($id);
 
-	}
+        return ($obj) ? $obj : new CategoriaModel();
+    }
+  
+    public function delete(int $id)
+    {
+        $dao = new ClienteDAO();
 
-	public function getById(int $id) 
-	{
-
-	}
+        $dao->delete($id);
+    }
 }
