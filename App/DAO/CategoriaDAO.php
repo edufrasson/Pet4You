@@ -59,7 +59,7 @@ class CategoriaDAO extends DAO {
 
     public function delete($id) 
     {
-        $sql = "UPDATE Categoria SET ativo = 'N' WHERE id = ?";
+        $sql = "DELETE FROM Categoria WHERE id = ?";
 
         $stmt = $this->conexao->prepare($sql);
         $stmt->bindValue(1, $id);

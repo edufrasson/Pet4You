@@ -49,23 +49,6 @@ class ClienteDAO extends DAO {
         return $stmt->fetchAll(PDO::FETCH_CLASS);
     }
 
-    public function selectAllEstoque($id){
-        $sql = "SELECT 
-                    e.*,
-                    c.id as Cliente_id,
-                    c.nome as Cliente
-                FROM Estoque e 
-                JOIN Cliente c on c.id = e.id_Cliente
-                WHERE c.id = ? AND e.ativo = 'S' ";
-
-        $stmt = $this->conexao->prepare($sql);
-        $stmt->bindValue(1, $id);
-
-        $stmt->execute();
-
-        return $stmt->fetchAll(PDO::FETCH_CLASS);
-    }
-
     public function selectById($id) 
     {
         $sql = "SELECT * FROM Cliente WHERE id = ?  ";
