@@ -1,23 +1,23 @@
 <?php
 namespace App\Controller;
 
-use App\Model\ClienteModel;
+use App\Model\CategoriaModel;
 
-class ClienteController extends Controller {
-	public static function index() 
-	{
-		parent::isAuthenticated();
-
-        $model = new ClienteModel();
-        $model->getAllRows();
-
-        include 'View/modules/Cliente/ListarCliente.php';
-	}
-
-	public static function getAll(){
+class CategoriaController extends Controller {
+	public static function index()
+    {
         parent::isAuthenticated();
 
-        $model = new ClienteModel();
+        $model = new CategoriaModel();
+        $model->getAllRows();
+
+        include 'View/modules/Categoria/ListarCategoria.php';
+    }
+
+    public static function getAll(){
+        parent::isAuthenticated();
+
+        $model = new CategoriaModel();
         $model->getAllRows();
        
         parent::setResponseAsJSON($model->rows);
@@ -27,7 +27,7 @@ class ClienteController extends Controller {
     {   
         parent::isAuthenticated();
         
-        $model = new ClienteModel();
+        $model = new CategoriaModel();
         $data = $model->getById($_GET['id']);
 
         parent::setResponseAsJSON($data);
@@ -37,12 +37,10 @@ class ClienteController extends Controller {
     {   
         parent::isAuthenticated();
      
-        $model = new ClienteModel();
+        $model = new CategoriaModel();
 
         $model->id = $_POST['id'];
-		$model->nome = $_POST['nome'];
-		$model->cpf = $_POST['cpf'];
-		$model->data_nasc = $_POST['data_nasc'];
+		$model->descricao = $_POST['descricao'];
             
         $model->save();
 
@@ -53,7 +51,7 @@ class ClienteController extends Controller {
     {   
         parent::isAuthenticated();
      
-        $model = new ClienteModel();
+        $model = new CategoriaModel();
 
         $model->delete( (int) $_GET['id']);
 

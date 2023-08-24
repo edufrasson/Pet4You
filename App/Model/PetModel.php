@@ -2,7 +2,7 @@
 namespace App\Model;
 
 class PetModel extends Model {
-	public $id;
+	public $id, $nome, $raca, $id_cliente;
 
 	public function save() 
 	{

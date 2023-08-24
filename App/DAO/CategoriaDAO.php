@@ -1,46 +1,42 @@
 <?php
 namespace App\DAO;
 
-use App\Model\PetModel;
+use App\Model\CategoriaModel;
 use \PDO;
 
-class PetDAO extends DAO {
+class CategoriaDAO extends DAO {
 
 	public function __construct()
     {
         parent::__construct();      
     }
 
-    public function insert(PetModel $model) 
+    public function insert(CategoriaModel $model) 
     {
-        $sql = "INSERT INTO Pet(nome, raca, id_cliente) VALUE (?, ?, ?)";
+        $sql = "INSERT INTO Categoria (descricao) VALUE (?)";
 
         $stmt = $this->conexao->prepare($sql);
 
-        $stmt->bindValue(1, $model->nome);        
-        $stmt->bindValue(2, $model->raca);        
-        $stmt->bindValue(3, $model->id_cliente);        
+        $stmt->bindValue(1, $model->descricao);        
 
         $stmt->execute();
     }
 
-    public function update(PetModel $model) 
+    public function update(CategoriaModel $model) 
     {
-        $sql = "UPDATE Pet SET nome = ?, raca = ?, id_cliente = ? WHERE id = ?";
+        $sql = "UPDATE Categoria SET descricao = ? WHERE id = ?";
 
         $stmt = $this->conexao->prepare($sql);
 
-        $stmt->bindValue(1, $model->nome);        
-        $stmt->bindValue(2, $model->raca);        
-        $stmt->bindValue(3, $model->id_cliente);
-        $stmt->bindValue(4, $model->id);
+        $stmt->bindValue(1, $model->descricao);        
+        $stmt->bindValue(2, $model->id);
 
         $stmt->execute();
     }
 
     public function select() 
     {
-        $sql = "SELECT * FROM Pet  ";
+        $sql = "SELECT * FROM Categoria WHERE ";
 
         $stmt = $this->conexao->prepare($sql);
 
@@ -49,10 +45,9 @@ class PetDAO extends DAO {
         return $stmt->fetchAll(PDO::FETCH_CLASS);
     }
 
-  
     public function selectById($id) 
     {
-        $sql = "SELECT * FROM Pet WHERE id = ?  ";
+        $sql = "SELECT * FROM Categoria WHERE id = ? ";
 
         $stmt = $this->conexao->prepare($sql);
         $stmt->bindValue(1, $id);
@@ -64,7 +59,7 @@ class PetDAO extends DAO {
 
     public function delete($id) 
     {
-        $sql = "DELETE FROM Pet WHERE id = ?";
+        $sql = "UPDATE Categoria SET ativo = 'N' WHERE id = ?";
 
         $stmt = $this->conexao->prepare($sql);
         $stmt->bindValue(1, $id);
