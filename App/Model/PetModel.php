@@ -1,26 +1,44 @@
 <?php
 namespace App\Model;
 
+use App\DAO\PetDAO;
+
 class PetModel extends Model {
 	public $id, $nome, $raca, $id_cliente;
 
-	public function save() 
-	{
+	public function save()
+    {
+        $dao = new PetDAO();
+        
+        if(empty($this->id))
+        {
+            return $dao->insert($this);
+        }
+        else
+            $dao->update($this);
+        
+    }
 
-	}
+    public function getAllRows()
+    {
+        $dao = new PetDAO();
 
-	public function getAllRows() 
-	{
+        $this->rows = $dao->select();
+    }
 
-	}
+    public function getById(int $id)
+    {
+        $dao = new PetDAO();
 
-	public function delete(int $id) 
-	{
+        $obj = $dao->selectById($id);
 
-	}
+        return ($obj) ? $obj : new PetModel();
+    }
+  
+    public function delete(int $id)
+    {
+        $dao = new PetDAO();
 
-	public function getById(int $id) 
-	{
-
-	}
+        $dao->delete($id);
+    }
 }
