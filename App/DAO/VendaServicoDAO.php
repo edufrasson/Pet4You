@@ -38,7 +38,7 @@ class VendaServicoDAO extends DAO {
 
     public function select() 
     {
-        $sql = "SELECT * FROM Venda  ";
+        $sql = "SELECT * FROM Venda_Servico  ";
 
         $stmt = $this->conexao->prepare($sql);
 
@@ -47,24 +47,24 @@ class VendaServicoDAO extends DAO {
         return $stmt->fetchAll(PDO::FETCH_CLASS);
     }
 
-    public function selectById($id) 
+    public function selectById($id_venda) 
     {
-        $sql = "SELECT * FROM Venda WHERE id = ?  ";
+        $sql = "SELECT * FROM Venda_Servico WHERE id_venda = ?  ";
 
         $stmt = $this->conexao->prepare($sql);
-        $stmt->bindValue(1, $id);
+        $stmt->bindValue(1, $id_venda);
 
         $stmt->execute();
 
         return $stmt->fetchObject();
     }
 
-    public function delete($id) 
+    public function delete($id_venda) 
     {
-        $sql = "DELETE FROM Venda WHERE id = ?";
+        $sql = "DELETE FROM Venda_Servico WHERE id_venda = ?";
 
         $stmt = $this->conexao->prepare($sql);
-        $stmt->bindValue(1, $id);
+        $stmt->bindValue(1, $id_venda);
 
         $stmt->execute();       
     }

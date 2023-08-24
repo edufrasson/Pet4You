@@ -32,7 +32,7 @@ class ServicoModel extends Model {
 
         $obj = $dao->selectById($id);
 
-        return ($obj) ? $obj : new CategoriaModel();
+        return ($obj) ? $obj : new ServicoModel();
     }
   
     public function delete(int $id)
