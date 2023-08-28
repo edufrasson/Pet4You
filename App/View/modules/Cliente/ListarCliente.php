@@ -32,7 +32,13 @@
                             </tr>
                         </thead>
                         <tbody>
-
+                            <?php foreach($model->rows as $cliente): ?>
+                                <tr>
+                                    <td><?= $cliente->nome?></td>
+                                    <td><?= $cliente->cpf?></td>
+                                    <td><?= $cliente->data_nasc?></td>
+                                </tr>
+                            <?php endforeach;?>
                         </tbody>
                     </table>
                 </div>

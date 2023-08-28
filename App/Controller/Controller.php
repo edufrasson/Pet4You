@@ -3,6 +3,9 @@ namespace App\Controller;
 use Exception;
 
 abstract class Controller {   
+    protected static function loginFailed(){
+        header('Location: /login?erro=true');
+    }
     protected static function render($view, $model = null) {
         $arquivo = "./View/modules/$view.php";
 

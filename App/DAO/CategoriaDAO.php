@@ -36,7 +36,7 @@ class CategoriaDAO extends DAO {
 
     public function select() 
     {
-        $sql = "SELECT * FROM Categoria WHERE ";
+        $sql = "SELECT * FROM Categoria ";
 
         $stmt = $this->conexao->prepare($sql);
 
