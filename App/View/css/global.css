@@ -88,6 +88,10 @@ body{
   gap: 20px;
 }
 
+.select-2{
+  z-index: 10000;
+}
+
 /* COMANDOS PARA RESPONSIVIDADE */
 @media screen and (max-width: 1600px){
   .main-container{

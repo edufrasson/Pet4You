@@ -2,12 +2,15 @@
     Este é um arquivo responsável por armazenar itens relacionados ao js da
     sua aplicação, seja ele links de frameworks e muito mais.
 -->
+
+<script src="View/js/jquery.config.min.js"></script>
 <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
-<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 <script src="./../../View/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="View/js/DataTables/datatables.min.js"></script>
 <script src="View/js/jquery.global.js"></script>
 <script src="View/js/plugin/jquery.maskedinput.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
 <!--  JS da Navbar -->
 <script>
     const body = document.querySelector('body'),

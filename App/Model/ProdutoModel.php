@@ -1,10 +1,12 @@
 <?php
 namespace App\Model;
 
+use App\DAO\CategoriaDAO;
 use App\DAO\ProdutoDAO;
 
 class ProdutoModel extends Model {
 	public $id, $descricao, $preco, $id_categoria;
+    public $lista_categorias;
 
 	public function save()
     {
@@ -24,6 +26,12 @@ class ProdutoModel extends Model {
         $dao = new ProdutoDAO();
 
         $this->rows = $dao->select();
+    }
+
+    public function getAllCategorias(){
+        $dao = new CategoriaDAO();
+
+        $this->lista_categorias = $dao->select();
     }
 
     public function getById(int $id)

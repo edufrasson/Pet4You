@@ -24,5 +24,9 @@ $(document).ready(function(){
           
     });
 
-    
+    $('.select-2').select2({
+        placeholder: 'Selecione uma opção',
+        dropdownParent: $('.modal-bootstrap'),
+        language: "pt"
+      });
 })

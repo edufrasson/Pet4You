@@ -40,7 +40,10 @@ class ProdutoDAO extends DAO {
 
     public function select() 
     {
-        $sql = "SELECT * FROM Produto  ";
+        $sql = "SELECT p.*, c.descricao as categoria 
+        FROM Produto p
+        JOIN Categoria c ON c.id = p.id_categoria 
+        ";
 
         $stmt = $this->conexao->prepare($sql);
 
@@ -52,7 +55,11 @@ class ProdutoDAO extends DAO {
   
     public function selectById($id) 
     {
-        $sql = "SELECT * FROM Produto WHERE id = ?  ";
+        $sql = "SELECT p.*, c.descricao as categoria 
+        FROM Produto p
+        JOIN Categoria c ON c.id = p.id_categoria
+        WHERE p.id = ? 
+        ";
 
         $stmt = $this->conexao->prepare($sql);
         $stmt->bindValue(1, $id);

@@ -10,6 +10,7 @@ class ProdutoController extends Controller {
 
         $model = new ProdutoModel();
         $model->getAllRows();
+        $model->getAllCategorias();
 
         include 'View/modules/Produto/ListarProduto.php';
     }
@@ -46,7 +47,7 @@ class ProdutoController extends Controller {
             
         $model->save();
 
-        parent::setResponseAsJSON($model);
+        header("Location: /produto");
     }
 
     public static function delete()
