@@ -26,15 +26,21 @@
                     <table class="table-style table table-bordered">
                         <thead>
                             <tr>
-                                <th>Descrição</th>                               
+                                <th>Descrição</th>
+                                <th>Ações</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <?php foreach($model->rows as $categoria): ?>
+                            <?php foreach ($model->rows as $categoria) : ?>
                                 <tr>
-                                    <td><?= $categoria->descricao?></td>                                    
+                                    <td><?= $categoria->descricao ?></td>
+                                    <td class="actions-list">
+                                        <box-icon name="edit" color="#eb5cfe" id="<?= $categoria->id ?>" data-bs-toggle="modal" data-bs-target="#modalCategoria" class="btn-icon btn-edit"></box-icon>
+                                        <box-icon name="trash" color="#eb5cfe" id="<?= $categoria->id ?>" class="btn-icon btn-delete"></box-icon>
+                                    </td>
                                 </tr>
-                            <?php endforeach;?>
+
+                            <?php endforeach; ?>
                         </tbody>
                     </table>
                 </div>
@@ -62,7 +68,7 @@
                             <input type="hidden" name="id" id="id">
                             <label for="descricao">Descrição:</label>
                             <input type="text" name="descricao" class="form-control" id="descricao" required maxlength="45">
-                        </div>                        
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
@@ -73,7 +79,7 @@
         </div>
     </div>
     <?php include 'View/includes/js_config.php' ?>
-    <?php include 'View/js/src/jquery.categoria.js' ?>
+    <script src="View/js/src/jquery.categoria.js"></script>
 </body>
 
 </html>

@@ -44,7 +44,7 @@ class CategoriaController extends Controller {
             
         $model->save();
 
-        parent::setResponseAsJSON($model);
+        header("Location: /categoria");
     }
 
     public static function delete()

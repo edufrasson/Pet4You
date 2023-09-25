@@ -28,6 +28,7 @@ body{
   display: flex;
   justify-content: space-around;
   font-family: 'Poppins' , sans-serif;
+  z-index: 0;
 }
 
 .main-container{
@@ -70,6 +71,11 @@ body{
   width: 100%;
   height: 8%;
   padding: 20px; 
+}
+
+.actions-list{
+  display: flex;
+  justify-content: space-around;
 }
 
 .text-container-header-card{
