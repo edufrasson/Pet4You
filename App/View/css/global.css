@@ -31,6 +31,10 @@ body{
   z-index: 0;
 }
 
+off{
+  opacity: 0;
+}
+
 .main-container{
   margin-left: 5%;
   width: 92vw;  

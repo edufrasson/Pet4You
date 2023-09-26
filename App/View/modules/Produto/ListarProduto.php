@@ -23,6 +23,11 @@
                     <button class="btn btn-pet" data-bs-toggle="modal" data-bs-target="#modalProduto">Novo Produto</button>
                 </div>
                 <div class="containers-card table-container">
+                    <div class="loading-container d-flex justify-content-center">
+                        <div class="spinner-border" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                    </div>
                     <table class="table-style table table-bordered">
                         <thead>
                             <tr>
@@ -65,12 +70,12 @@
                 <form method="post" action="/produto/save">
                     <div class="modal-body">
                         <div class="input-row">
-                            <div class="input-container">
+                            <div class="input-container mb-3">
                                 <input type="hidden" name="id" id="id">
                                 <label for="descricao">Descrição:</label>
                                 <input type="text" name="descricao" class="form-control" id="descricao" required maxlength="45">
                             </div>
-                            <div class="input-container">
+                            <div class="input-container mb-3">
                                 <input type="hidden" name="id" id="id">
                                 <label for="preco">Preço (R$):</label>
                                 <input type="number" name="preco" class="form-control" id="preco" required maxlength="45">
@@ -80,12 +85,12 @@
                             <label for="id_categoria">Categoria:</label><br>
                             <select class="select-2" name="id_categoria" id="id_categoria" required>
                                 <?php if ($model->lista_categorias == null) : ?>
-                                    <option  value="">Cadastre uma categoria primeiro!</option>
+                                    <option value="">Cadastre uma categoria primeiro!</option>
                                 <?php else : ?>
-                                    <option  value="">Selecione uma categoria!</option>
+                                    <option value="">Selecione uma categoria!</option>
                                     <?php foreach ($model->lista_categorias as $categoria) : ?>
 
-                                        <option  value=<?= $categoria->id ?>><?= $categoria->descricao ?></option>
+                                        <option value=<?= $categoria->id ?>><?= $categoria->descricao ?></option>
                                     <?php endforeach ?>
                                 <?php endif ?>
                             </select>

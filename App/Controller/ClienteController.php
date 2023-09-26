@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use App\Model\ClienteModel;
+use App\Services\Service;
 
 class ClienteController extends Controller {
 	public static function index() 
@@ -41,12 +42,12 @@ class ClienteController extends Controller {
 
         $model->id = $_POST['id'];
 		$model->nome = $_POST['nome'];
-		$model->cpf = $_POST['cpf'];
+		$model->cpf = Service::unmaskCPF($_POST['cpf']);
 		$model->data_nasc = $_POST['data_nasc'];
             
         $model->save();
 
-        parent::setResponseAsJSON($model);
+       header("Location: /cliente");
     }
 
     public static function delete()

@@ -23,6 +23,11 @@
                     <button class="btn btn-pet" data-bs-toggle="modal" data-bs-target="#modalCategoria">Nova Categoria</button>
                 </div>
                 <div class="containers-card table-container">
+                    <div class="loading-container d-flex justify-content-center">
+                        <div class="spinner-border" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                    </div>
                     <table class="table-style table table-bordered">
                         <thead>
                             <tr>

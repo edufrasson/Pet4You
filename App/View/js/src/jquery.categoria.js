@@ -1,4 +1,4 @@
-function addCategoria(id, descricao) {
+/*function addCategoria(id, descricao) {
     if (descricao !== "") {
         $.ajax({
             type: "POST",
@@ -28,7 +28,7 @@ function addCategoria(id, descricao) {
             text: 'Preencha todos os campos!'
         })
     }
-}
+}*/
 
 function getCategoriaById(id) {
     $.ajax({
