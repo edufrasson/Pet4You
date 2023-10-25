@@ -1,10 +1,12 @@
 <?php
 namespace App\Model;
 
+use App\DAO\ClienteDAO;
 use App\DAO\PetDAO;
 
 class PetModel extends Model {
 	public $id, $nome, $raca, $id_cliente;
+    public $lista_clientes;
 
 	public function save()
     {
@@ -24,6 +26,12 @@ class PetModel extends Model {
         $dao = new PetDAO();
 
         $this->rows = $dao->select();
+    }
+
+    public function getAllClientes(){
+        $dao = new ClienteDAO();
+
+        $this->lista_clientes = $dao->select();
     }
 
     public function getById(int $id)

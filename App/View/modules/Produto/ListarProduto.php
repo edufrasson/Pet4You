@@ -32,6 +32,7 @@
                         <thead>
                             <tr>
                                 <th>Descrição</th>
+                                <th>Categoria</th>
                                 <th>Ações</th>
                             </tr>
                         </thead>
@@ -39,6 +40,7 @@
                             <?php foreach ($model->rows as $produto) : ?>
                                 <tr>
                                     <td><?= $produto->descricao ?></td>
+                                    <td><?= $produto->categoria ?></td>
                                     <td class="actions-list">
                                         <box-icon name="edit" color="#eb5cfe" id="<?= $produto->id ?>" data-bs-toggle="modal" data-bs-target="#modalProduto" class="btn-icon btn-edit"></box-icon>
                                         <box-icon name="trash" color="#eb5cfe" id="<?= $produto->id ?>" class="btn-icon btn-delete"></box-icon>
@@ -62,10 +64,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="modalProdutoTitle">Cadastrar Produto</h5>
-                    <!--<button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>-->
-                    </button>
+                    <h5 class="modal-title" id="modalProdutoTitle">Cadastrar Produto</h5>                    
                 </div>
                 <form method="post" action="/produto/save">
                     <div class="modal-body">

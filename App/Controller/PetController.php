@@ -10,6 +10,7 @@ class PetController extends Controller {
 
         $model = new PetModel();
         $model->getAllRows();
+        $model->getAllClientes();
 
         include 'View/modules/Pet/ListarPet.php';
     }
