@@ -37,8 +37,9 @@
                         <tbody>
                             <?php foreach ($model->rows as $pet) : ?>
                                 <tr>
-                                    <td><?= $pet->descricao ?></td>
-                                    <td><?= $pet->categoria ?></td>
+                                    <td><?= $pet->nome ?></td>
+                                    <td><?= $pet->raca ?></td>
+                                    <td><?= $pet->cliente ?></td>
                                     <td class="actions-list">
                                         <box-icon name="edit" color="blue" id="<?= $pet->id ?>" data-bs-toggle="modal" data-bs-target="#modalPet" class="btn-icon btn-edit"></box-icon>
                                         <box-icon name="trash" color="red" id="<?= $pet->id ?>" class="btn-icon btn-delete"></box-icon>

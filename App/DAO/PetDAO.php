@@ -40,7 +40,11 @@ class PetDAO extends DAO {
 
     public function select() 
     {
-        $sql = "SELECT * FROM Pet  ";
+        $sql = "SELECT p.*,
+                        c.nome as cliente
+                FROM Pet p
+                JOIN Cliente c ON c.id = p.id_cliente 
+        ";
 
         $stmt = $this->conexao->prepare($sql);
 

@@ -34,6 +34,14 @@ class ProdutoController extends Controller {
         parent::setResponseAsJSON($data);
     }
 
+    public static function edit(){
+        $model = new ProdutoModel();
+        $dados = $model->getById($_GET['id']);
+        $model->getAllCategorias();        
+
+        include 'View/modules/Produto/EditarProduto.php';
+    }
+
     public static function save()
     {   
         parent::isAuthenticated();

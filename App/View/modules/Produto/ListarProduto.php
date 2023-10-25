@@ -42,7 +42,9 @@
                                     <td><?= $produto->descricao ?></td>
                                     <td><?= $produto->categoria ?></td>
                                     <td class="actions-list">
-                                        <box-icon name="edit" color="#eb5cfe" id="<?= $produto->id ?>" data-bs-toggle="modal" data-bs-target="#modalProduto" class="btn-icon btn-edit"></box-icon>
+                                        <a href="/editar_produto?id=<?= $produto->id ?>">
+                                            <box-icon name="edit" color="#eb5cfe" id="<?= $produto->id ?>" data-bs-toggle="modal" data-bs-target="#modalProduto" class="btn-icon btn-edit"></box-icon>
+                                        </a>
                                         <box-icon name="trash" color="#eb5cfe" id="<?= $produto->id ?>" class="btn-icon btn-delete"></box-icon>
                                     </td>
                                 </tr>
@@ -64,7 +66,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="modalProdutoTitle">Cadastrar Produto</h5>                    
+                    <h5 class="modal-title" id="modalProdutoTitle">Cadastrar Produto</h5>
                 </div>
                 <form method="post" action="/produto/save">
                     <div class="modal-body">

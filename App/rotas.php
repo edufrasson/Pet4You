@@ -86,6 +86,9 @@ switch ($parse_uri) {
     case '/produto/get-by-id':
         ProdutoController::getById();
         break;
+    case '/editar_produto':
+        ProdutoController::edit();
+        break;
 
         // pagamento
     case '/pagamento':
