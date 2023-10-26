@@ -10,8 +10,9 @@ class VendaController extends Controller {
 
         $model = new VendaModel();
         $model->getAllRows();
+        $model->getAllProdutos();
 
-        include 'View/modules/Venda/ListarVenda.php';
+        include 'View/modules/Venda/NovaVenda.php';
 	}
 
 	public static function getAll(){

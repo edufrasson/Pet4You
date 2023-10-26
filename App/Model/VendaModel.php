@@ -1,10 +1,12 @@
 <?php
 namespace App\Model;
 
+use App\DAO\ProdutoDAO;
 use App\DAO\VendaDAO;
 
 class VendaModel extends Model {
 	public $id, $data_venda, $id_cliente;
+    public $arr_produtos;
 
 	public function save()
     {
@@ -24,6 +26,13 @@ class VendaModel extends Model {
         $dao = new VendaDAO();
 
         $this->rows = $dao->select();
+    }
+
+    public function getAllProdutos()
+    {
+        $dao = new ProdutoDAO();
+
+        $this->arr_produtos = $dao->select();
     }
 
     public function getById(int $id)

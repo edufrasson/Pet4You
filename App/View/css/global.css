@@ -71,6 +71,14 @@ off{
   padding: 20px;
 }
 
+.form-add-product{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+
 .header-card{
   width: 100%;
   height: 8%;
@@ -95,6 +103,113 @@ off{
 .select-2{
   z-index: 10000;
 }
+
+/* CONTAINER */
+.container-card {
+  width: 100%;
+  height: 95%;
+  background-color: white;
+  border-radius: 10px;
+}
+
+
+.containers-card {
+  width: 100%;
+  padding: 20px;
+}
+
+.buttons-container{
+  height: 5%;
+}
+
+.table-container{
+  height: 50%;
+}
+.action-container{
+  height: 30%;
+}
+
+.form-add-product{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+
+.form-add-product #adicionarProduto{
+  margin-bottom: -15px;
+}
+
+.btn:first-child {
+  margin-right: 10px;
+}
+
+.header-card {
+  width: 100%;
+  height: 8%;
+  padding: 20px;
+}
+
+.text-container-header-card {
+  font-size: 25px;
+}
+
+.final-actions .btn a{
+  text-decoration: none;
+  color: #000;
+}
+
+.final-actions {
+  margin-top: -50px;
+}
+
+.final-actions .btn-pagamento {
+  margin-top: 10px;
+}
+
+/* TABELA COM SCROLL */
+.content-body {
+  height: 100vh;
+}
+
+.table-produto {
+  display: flex;
+  flex-flow: column;
+  height: 20%;
+  width: 100%;
+}
+
+.table-produto .thead-produto {
+
+  flex: 0 0 auto;
+  width: calc(100% - 0.8rem);
+}
+
+.table-produto .tbody-produto {
+
+  flex: 1 1 auto;
+  display: block;
+  height: 48vh;
+  overflow-y: scroll;
+  width: calc(100% + 0.25rem);
+}
+
+.table-produto .tbody-produto tr {
+  width: 100%;
+}
+
+.table-produto .thead-produto,
+.table-produto .tbody-produto tr {
+  display: table;
+  table-layout: fixed;
+}
+
+.data-actions {
+  display: flex;
+  justify-content: center;
+}
+
 
 /* COMANDOS PARA RESPONSIVIDADE */
 @media screen and (max-width: 1600px){

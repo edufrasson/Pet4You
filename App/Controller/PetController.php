@@ -47,7 +47,7 @@ class PetController extends Controller {
             
         $model->save();
 
-        parent::setResponseAsJSON($model);
+        header("Location: /pet");
     }
 
     public static function delete()
