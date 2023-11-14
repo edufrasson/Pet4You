@@ -16,6 +16,13 @@ class VendaController extends Controller {
         include 'View/modules/Venda/NovaVenda.php';
 	}
 
+    public static function relatorio(){
+        $model = new VendaModel();
+        $model->getAllRows();
+
+        include 'View/modules/Venda/VerRelatorio.php';
+    }
+
 	public static function getAll(){
         parent::isAuthenticated();
 

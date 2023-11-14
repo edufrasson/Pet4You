@@ -13,13 +13,6 @@
     </header>
     <div class="menu-bar">
         <div class="menu">       
-
-            <li class="nav-link">
-                <a href="/home">
-                    <i class='bx bx-home-alt icon'></i>
-                    <span class="text nav-text">Dashboard</span>
-                </a>
-            </li>
             <li class="nav-link">
                 <a href="/movimentacao">
                     <i class='bx bx-dollar-circle icon'></i>
@@ -30,6 +23,12 @@
                 <a href="/venda">
                     <i class='bx bx-cart-add icon'></i>
                     <span class="text nav-text">Nova Venda</span>
+                </a>
+            </li>
+            <li>
+                <a href="/relatorio">
+                    <i class='bx bx-line-chart icon'></i>
+                    <span class="text nav-text">Relatório de Venda</span>
                 </a>
             </li>
             <li class="nav-link">

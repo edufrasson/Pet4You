@@ -73,8 +73,7 @@
                                 <label for="nome">Nome:</label>
                                 <input type="text" name="nome" class="form-control" id="nome" required maxlength="45">
                             </div>
-                            <div class="input-container mb-3">
-                                <input type="hidden" name="id" id="id">
+                            <div class="input-container mb-3">                                
                                 <label for="raca">Raça:</label>
                                 <input type="text" name="raca" class="form-control" id="raca" required maxlength="45">
                             </div>

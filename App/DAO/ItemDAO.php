@@ -65,14 +65,18 @@ class ItemDAO extends DAO
 
     public function selectById($id_venda)
     {
-        $sql = "SELECT * FROM Item WHERE id_venda = ?  ";
+        $sql = "SELECT i.*,
+                p.descricao as descricao
+        FROM Item i
+        JOIN Produto p ON p.id = i.id_produto
+        WHERE id_venda = ?  ";
 
         $stmt = parent::getConnection()->prepare($sql);
         $stmt->bindValue(1, $id_venda);
 
         $stmt->execute();
 
-        return $stmt->fetchObject();
+        return $stmt->fetchAll(PDO::FETCH_CLASS);
     }
 
     public function delete($id_venda)

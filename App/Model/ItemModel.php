@@ -25,6 +25,7 @@ class ItemModel extends Model
 
         $this->rows = $dao->select();
     }
+ 
 
     public function getById(int $id)
     {

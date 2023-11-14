@@ -45,6 +45,13 @@ off{
   transition: 0.2s; 
 }
 
+.movimentacao-entrada{
+  color: rgb(33, 201, 33);
+}
+.movimentacao-saida{
+  color: red;
+}
+
 .main-alt-size{
   width: 84vw; 
   margin-left: 13%;

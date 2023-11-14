@@ -59,7 +59,7 @@ function relacionarProdutoVenda(id_venda, lista_produtos) {
       },
       dataType: "json",
       success: function (result) {
-        adicionarMovimentacao(last_id_venda, valor_total, $('#data_venda').val(), "ENTRADA")
+        adicionarMovimentacao(last_id_venda, valor_total, $('#data_venda').val(), "ENTRADA", "Recebimento de Venda")
       },
       error: function (result) {
         console.log(result);
@@ -84,7 +84,7 @@ function relacionarProdutoVenda(id_venda, lista_produtos) {
  *  Requisição para insert na tabela de Movimentacao
  */
 
-function adicionarMovimentacao(id_venda, valor_total, data_movimentacao, tipo, id = null) {
+function adicionarMovimentacao(id_venda, valor_total, data_movimentacao, tipo, descricao, id = null) {
   if (id_venda != false && valor_total != false && data_movimentacao != false) {
     $.ajax({
       type: "POST",
@@ -93,12 +93,18 @@ function adicionarMovimentacao(id_venda, valor_total, data_movimentacao, tipo, i
         id_venda: id_venda,
         valor_total: valor_total,
         data_movimentacao: data_movimentacao,
+        descricao: descricao,
         tipo: tipo,
         id: id
       },
       dataType: "json",
       success: function (result) {
-        console.log(result.response_data);
+        swal({
+          title: "Sucesso!",
+          text: "Venda inserida com sucesso!",
+          icon: "success",
+          button: "OK",
+        });
         
       },
       error: function (result) {

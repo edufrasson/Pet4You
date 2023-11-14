@@ -14,7 +14,7 @@ $(document).ready(function(){
             "lengthMenu":     "Mostrar _MENU_ registros",
             "zeroRecords": "Nenhum registro encontrado!",
           },
-        'scrollY':  ($(window).height() - 400),   
+        'scrollY':  ($(window).height() - 350),   
         'info': false,
         'ordering': true,  
         'fixedHeader': false,

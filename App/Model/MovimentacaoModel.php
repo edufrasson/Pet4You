@@ -4,7 +4,7 @@ namespace App\Model;
 use App\DAO\MovimentacaoDAO;
 
 class MovimentacaoModel extends Model {
-	public $id, $data_movimentacao, $valor_total, $id_venda;
+	public $id, $data_movimentacao, $valor_total, $id_venda, $descricao;
     public $lista_categorias;
 
 	public function save()

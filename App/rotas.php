@@ -93,12 +93,20 @@ switch ($parse_uri) {
     case '/venda':
         VendaController::index();
         break;
+        // relatorio
+    case '/relatorio':
+        VendaController::relatorio();
+        break;
     case '/venda/delete':
         VendaController::delete();
         break;
     case '/venda/save':
         VendaController::save();
         break;
+    case '/venda/get-produtos':
+        ItemController::getProdutos();
+        break;
+
     case '/venda/get-by-id':
         VendaController::getById();
         break;

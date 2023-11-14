@@ -45,6 +45,14 @@ class ItemController extends Controller {
 
         parent::setResponseAsJSON($res);
     }
+    public static function getProdutos()
+    {
+       parent::isAuthenticated();
+
+        $model = new ItemModel(); 
+
+        parent::setResponseAsJSON($model->getById($_GET['id']));
+    }
 
     public static function delete()
     {   

@@ -27,7 +27,7 @@ class LoginController extends Controller {
             } 
             else{
                 $_SESSION['user_logged'] = json_encode($user);
-                header('Location: /home');
+                header('Location: /relatorio');
             }            
         }catch(Exception $e){
             parent::getExceptionAsJSON($e);

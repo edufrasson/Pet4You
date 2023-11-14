@@ -47,14 +47,16 @@ class MovimentacaoController extends Controller {
         $model = new MovimentacaoModel();
 
         $model->id = $_POST['id'];
+        $model->descricao = $_POST['descricao'];
 		$model->data_movimentacao = $_POST['data_movimentacao'];
         ($_POST['tipo'] == 'ENTRADA') ? $model->valor_total = $_POST['valor_total'] : $model->valor_total = -$_POST['valor_total'];
 		
-		$model->id_venda = $_POST['id_venda'];
+		if(isset($_POST['id_venda']))
+            $model->id_venda = $_POST['id_venda'];
             
-        parent::setResponseAsJSON($model->save());
+        $model->save();
 
-        //header("Location: /Movimentacao");
+        header("Location: /movimentacao");
     }
 
     public static function delete()

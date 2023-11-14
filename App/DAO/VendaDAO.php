@@ -42,7 +42,16 @@ class VendaDAO extends DAO {
 
     public function select() 
     {
-        $sql = "SELECT * FROM Venda  ";
+        $sql = "SELECT v.*,
+		                p.nome as nome_pet,
+                        c.nome as nome_cliente,
+                        DATE_FORMAT(v.data_venda, '%d/%m/%Y') as data,
+                        FORMAT(m.valor_total, 2, 'de_DE')  as valor_total
+                FROM venda v
+                JOIN pet p ON p.id = v.id_pet
+                JOIN cliente c ON c.id = p.id_cliente
+                JOIN movimentacao m ON v.id = m.id_venda
+                ;  ";
 
         $stmt = parent::getConnection()->prepare($sql);
 
