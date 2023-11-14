@@ -13,24 +13,28 @@ class VendaDAO extends DAO {
 
     public function insert(VendaModel $model) 
     {
-        $sql = "INSERT INTO Venda(data_venda, id_cliente) VALUE (?, ?)";
+        $sql = "INSERT INTO Venda(data_venda, id_pet) VALUE (?, ?)";
 
-        $stmt = $this->conexao->prepare($sql);
+        $stmt = parent::getConnection()->prepare($sql);
 
         $stmt->bindValue(1, $model->data_venda);        
-        $stmt->bindValue(2, $model->id_cliente);       
+        $stmt->bindValue(2, $model->id_pet);       
       
         $stmt->execute();
+
+        $model_retorno = new VendaModel();
+        $model_retorno->id = parent::getConnection()->lastInsertId();
+        return $model_retorno;
     }
 
     public function update(VendaModel $model) 
     {
-        $sql = "UPDATE Venda SET data_venda = ?, id_cliente = ? WHERE id = ?";
+        $sql = "UPDATE Venda SET data_venda = ?, id_pet = ? WHERE id = ?";
 
-        $stmt = $this->conexao->prepare($sql);
+        $stmt = parent::getConnection()->prepare($sql);
 
         $stmt->bindValue(1, $model->data_venda);        
-        $stmt->bindValue(2, $model->id_cliente);       
+        $stmt->bindValue(2, $model->id_pet);       
         $stmt->bindValue(3, $model->id);
 
         $stmt->execute();
@@ -40,7 +44,7 @@ class VendaDAO extends DAO {
     {
         $sql = "SELECT * FROM Venda  ";
 
-        $stmt = $this->conexao->prepare($sql);
+        $stmt = parent::getConnection()->prepare($sql);
 
         $stmt->execute();
 
@@ -51,7 +55,7 @@ class VendaDAO extends DAO {
     {
         $sql = "SELECT * FROM Venda WHERE id = ?  ";
 
-        $stmt = $this->conexao->prepare($sql);
+        $stmt = parent::getConnection()->prepare($sql);
         $stmt->bindValue(1, $id);
 
         $stmt->execute();
@@ -63,7 +67,7 @@ class VendaDAO extends DAO {
     {
         $sql = "DELETE FROM Venda WHERE id = ?";
 
-        $stmt = $this->conexao->prepare($sql);
+        $stmt = parent::getConnection()->prepare($sql);
         $stmt->bindValue(1, $id);
 
         $stmt->execute();       

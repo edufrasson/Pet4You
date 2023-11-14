@@ -23,14 +23,10 @@
             </div>
             <div class="main-card">
                 <div class="containers-card buttons-container">
-                    <form class="form-add-product" method="post">
-                        <div class="input-container">
-                            <label for="txtDataVenda">Data da Venda: </label><br>
-                            <input class="form-control" type="date" name="data_venda" id="data_venda">
-                        </div>
+                    <form class="form-add-product" method="post">                        
                         <div class="input-container select-container">
                             <label for="id_produto">Produto:</label><br>
-                            <select class="selectpicker bg-light" name="id_produto" id="id_produto">
+                            <select class="selectpicker bg-light" name="id_produto" id="id_produto" data-live-search="true">
                                 <option value="">Cadastre um produto primeiro!</option>
                                 <?php foreach ($model->arr_produtos as $produto) : ?>
                                     <option value="<?= $produto->id ?>"><?= $produto->descricao ?></option>
@@ -67,7 +63,7 @@
                 </div>
                 <div class="containers-card action-container">
                     <div class="final-actions">
-                        <button class="btn btn-pet btn-pagamento" data-bs-toggle="modal" data-bs-target="#modalPagamento">Método de Pagamento</button>
+                        <button class="btn btn-pet btn-pagamento" data-bs-toggle="modal" data-bs-target="#modalPagamento">Finalizar Venda</button>
                     </div>
                 </div>
             </div>

@@ -1,22 +1,22 @@
 <?php
+
 namespace App\Model;
 
 use App\DAO\ItemDAO;
 
-class ItemModel extends Model {
-	public $id_produto, $id_venda, $quantidade, $valor_unit;
+class ItemModel extends Model
+{
+    public $id, $id_produto, $id_venda, $quantidade, $valor_unit;
+    public $arr_produtos;
 
-	public function save()
+    public function save()
     {
         $dao = new ItemDAO();
-        
-       /* if(empty($this->id))
-        {
+
+        if (empty($this->id)) {
             return $dao->insert($this);
-        }
-        else
-            $dao->update($this);*/
-        
+        } else
+            $dao->update($this);
     }
 
     public function getAllRows()
@@ -34,7 +34,7 @@ class ItemModel extends Model {
 
         return ($obj) ? $obj : new ItemModel();
     }
-  
+
     public function delete(int $id)
     {
         $dao = new ItemDAO();

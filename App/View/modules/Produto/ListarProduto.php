@@ -84,7 +84,7 @@
                         </div>
                         <div class="input-row">
                             <label for="id_categoria">Categoria:</label><br>
-                            <select class="select-2" name="id_categoria" id="id_categoria" required>
+                            <select class="form-select" name="id_categoria" id="id_categoria" required>
                                 <?php if ($model->lista_categorias == null) : ?>
                                     <option value="">Cadastre uma categoria primeiro!</option>
                                 <?php else : ?>

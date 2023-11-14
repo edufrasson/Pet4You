@@ -9,6 +9,7 @@
 <script src="View/js/DataTables/datatables.min.js"></script>
 <script src="View/js/jquery.global.js"></script>
 <script src="View/js/plugin/jquery.maskedinput.js"></script>
+<script src="View/js/plugin/sweetalert.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
 <!-- Bootstrap Select -->

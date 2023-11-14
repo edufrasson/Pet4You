@@ -15,7 +15,7 @@ class ClienteDAO extends DAO {
     {
         $sql = "INSERT INTO Cliente(nome, cpf, data_nasc) VALUE (?, ?, ?)";
 
-        $stmt = $this->conexao->prepare($sql);
+        $stmt = parent::getConnection()->prepare($sql);
 
         $stmt->bindValue(1, $model->nome);        
         $stmt->bindValue(2, $model->cpf);        
@@ -28,7 +28,7 @@ class ClienteDAO extends DAO {
     {
         $sql = "UPDATE Cliente SET nome = ?, cpf = ?, data_nasc = ? WHERE id = ?";
 
-        $stmt = $this->conexao->prepare($sql);
+        $stmt = parent::getConnection()->prepare($sql);
 
         $stmt->bindValue(1, $model->nome);        
         $stmt->bindValue(2, $model->cpf);        
@@ -42,7 +42,7 @@ class ClienteDAO extends DAO {
     {
         $sql = "SELECT * FROM Cliente  ";
 
-        $stmt = $this->conexao->prepare($sql);
+        $stmt = parent::getConnection()->prepare($sql);
 
         $stmt->execute();
 
@@ -53,7 +53,7 @@ class ClienteDAO extends DAO {
     {
         $sql = "SELECT * FROM Cliente WHERE id = ?  ";
 
-        $stmt = $this->conexao->prepare($sql);
+        $stmt = parent::getConnection()->prepare($sql);
         $stmt->bindValue(1, $id);
 
         $stmt->execute();
@@ -65,7 +65,7 @@ class ClienteDAO extends DAO {
     {
         $sql = "DELETE FROM Cliente WHERE id = ?";
 
-        $stmt = $this->conexao->prepare($sql);
+        $stmt = parent::getConnection()->prepare($sql);
         $stmt->bindValue(1, $id);
 
         $stmt->execute();       

@@ -21,6 +21,18 @@
                 </a>
             </li>
             <li class="nav-link">
+                <a href="/movimentacao">
+                    <i class='bx bx-dollar-circle icon'></i>
+                    <span class="text nav-text">Movimentação</span>
+                </a>
+            </li>
+            <li class="nav-link">
+                <a href="/venda">
+                    <i class='bx bx-cart-add icon'></i>
+                    <span class="text nav-text">Nova Venda</span>
+                </a>
+            </li>
+            <li class="nav-link">
                 <a href="/produto">
                     <i class='bx bx-bar-chart-alt-2 icon'></i>
                     <span class="text nav-text">Produtos</span>
@@ -44,12 +56,7 @@
                     <span class="text nav-text">Cliente</span>
                 </a>
             </li>
-            <li class="nav-link">
-                <a href="/venda">
-                    <i class='bx bx-cart-add icon'></i>
-                    <span class="text nav-text">Nova Venda</span>
-                </a>
-            </li>
+           
             
 
         </div>

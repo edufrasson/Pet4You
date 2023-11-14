@@ -11,6 +11,7 @@ class VendaController extends Controller {
         $model = new VendaModel();
         $model->getAllRows();
         $model->getAllProdutos();
+        $model->getAllPets();
 
         include 'View/modules/Venda/NovaVenda.php';
 	}
@@ -42,11 +43,9 @@ class VendaController extends Controller {
 
         $model->id = $_POST['id'];
 		$model->data_venda = $_POST['data_venda'];
-		$model->id_cliente = $_POST['id_cliente'];
-        
-        $model->save();
+		$model->id_pet = $_POST['id_pet'];
 
-        parent::setResponseAsJSON($model);
+        parent::setResponseAsJSON($model->save());
     }
 
     public static function delete()

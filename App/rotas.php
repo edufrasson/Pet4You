@@ -6,8 +6,7 @@ use App\Controller\{
     LoginController,
     DashboardController,
     ItemController,
-    PagamentoController,
-    ParcelaController,
+    MovimentacaoController,
     PetController,
     ProdutoController,
     VendaController
@@ -90,36 +89,8 @@ switch ($parse_uri) {
         ProdutoController::edit();
         break;
 
-        // pagamento
-    case '/pagamento':
-        PagamentoController::index();
-        break;
-    case '/pagamento/delete':
-        PagamentoController::delete();
-        break;
-    case '/pagamento/save':
-        PagamentoController::save();
-        break;
-    case '/pagamento/get-by-id':
-        PagamentoController::getById();
-        break;
-
-      // parcela
-      case '/parcela':
-        ParcelaController::index();
-        break;
-    case '/parcela/delete':
-        ParcelaController::delete();
-        break;
-    case '/parcela/save':
-        ParcelaController::save();
-        break;
-    case '/parcela/get-by-id':
-        ParcelaController::getById();
-        break; 
-        
-      // venda
-      case '/venda':
+        // venda
+    case '/venda':
         VendaController::index();
         break;
     case '/venda/delete':
@@ -130,10 +101,25 @@ switch ($parse_uri) {
         break;
     case '/venda/get-by-id':
         VendaController::getById();
-        break;    
+        break;
 
-      // item
-      case '/item':
+        // Movimentacao
+    case '/movimentacao':
+        MovimentacaoController::index();
+        break;
+    case '/movimentacao/delete':
+        MovimentacaoController::delete();
+        break;
+    case '/movimentacao/save':
+        MovimentacaoController::save();
+        break;
+    case '/movimentacao/get-by-id':
+        MovimentacaoController::getById();
+        break;
+
+
+        // item
+    case '/item':
         ItemController::index();
         break;
     case '/item/delete':
@@ -144,7 +130,7 @@ switch ($parse_uri) {
         break;
     case '/item/get-by-id':
         ItemController::getById();
-        break;    
+        break;
 
     default:
         header("Location: /login");

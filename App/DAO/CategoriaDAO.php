@@ -15,7 +15,7 @@ class CategoriaDAO extends DAO {
     {
         $sql = "INSERT INTO Categoria (descricao) VALUE (?)";
 
-        $stmt = $this->conexao->prepare($sql);
+        $stmt = parent::getConnection()->prepare($sql);
 
         $stmt->bindValue(1, $model->descricao);        
 
@@ -26,7 +26,7 @@ class CategoriaDAO extends DAO {
     {
         $sql = "UPDATE Categoria SET descricao = ? WHERE id = ?";
 
-        $stmt = $this->conexao->prepare($sql);
+        $stmt = parent::getConnection()->prepare($sql);
 
         $stmt->bindValue(1, $model->descricao);        
         $stmt->bindValue(2, $model->id);
@@ -38,7 +38,7 @@ class CategoriaDAO extends DAO {
     {
         $sql = "SELECT * FROM Categoria ";
 
-        $stmt = $this->conexao->prepare($sql);
+        $stmt = parent::getConnection()->prepare($sql);
 
         $stmt->execute();
 
@@ -49,7 +49,7 @@ class CategoriaDAO extends DAO {
     {
         $sql = "SELECT * FROM Categoria WHERE id = ? ";
 
-        $stmt = $this->conexao->prepare($sql);
+        $stmt = parent::getConnection()->prepare($sql);
         $stmt->bindValue(1, $id);
 
         $stmt->execute();
@@ -61,7 +61,7 @@ class CategoriaDAO extends DAO {
     {
         $sql = "DELETE FROM Categoria WHERE id = ?";
 
-        $stmt = $this->conexao->prepare($sql);
+        $stmt = parent::getConnection()->prepare($sql);
         $stmt->bindValue(1, $id);
 
         $stmt->execute();       

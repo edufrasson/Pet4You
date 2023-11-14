@@ -53,6 +53,7 @@ off{
 
 .btn-pet{
   background-color: var(--primary-color);
+  color: white;
 }
 
 .btn-pet:hover{
@@ -98,6 +99,13 @@ off{
   display: flex;
   flex-direction: column;
   gap: 20px;
+}
+
+.input-row{
+  display: flex;
+  column-gap: 1rem;
+  align-items: center;
+  justify-content: center;
 }
 
 .select-2{

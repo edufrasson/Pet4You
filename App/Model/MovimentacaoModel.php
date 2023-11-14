@@ -1,16 +1,17 @@
 <?php
 namespace App\Model;
 
-use App\DAO\PagamentoDAO;
+use App\DAO\MovimentacaoDAO;
 
-class PagamentoModel extends Model {
-	public $id, $tipo, $qnt_parcelas, $valor_total, $id_venda;
+class MovimentacaoModel extends Model {
+	public $id, $data_movimentacao, $valor_total, $id_venda;
+    public $lista_categorias;
 
 	public function save()
     {
-        $dao = new PagamentoDAO();
+        $dao = new MovimentacaoDAO();
         
-       if(empty($this->id))
+        if(empty($this->id))
         {
             return $dao->insert($this);
         }
@@ -21,23 +22,23 @@ class PagamentoModel extends Model {
 
     public function getAllRows()
     {
-        $dao = new PagamentoDAO();
+        $dao = new MovimentacaoDAO();
 
         $this->rows = $dao->select();
     }
 
     public function getById(int $id)
     {
-        $dao = new PagamentoDAO();
+        $dao = new MovimentacaoDAO();
 
         $obj = $dao->selectById($id);
 
-        return ($obj) ? $obj : new PagamentoModel();
+        return ($obj) ? $obj : new MovimentacaoModel();
     }
   
     public function delete(int $id)
     {
-        $dao = new PagamentoDAO();
+        $dao = new MovimentacaoDAO();
 
         $dao->delete($id);
     }

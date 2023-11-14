@@ -35,18 +35,15 @@ class ItemController extends Controller {
 
     public static function save()
     {   
-        parent::isAuthenticated();
-     
-        $model = new ItemModel();
+        parent::isAuthenticated();  
+        $lista = json_decode($_POST['lista_produtos']);
+        $model = new ItemModel();        
+		$model->id_venda = $_POST['id_venda'];		
+        $model->arr_produtos = $lista;
+        $res = $model->save();
+        
 
-        $model->id_produto = $_POST['id_produto'];
-		$model->id_venda = $_POST['id_venda'];
-		$model->quantidade = $_POST['quantidade'];
-		$model->valor_unit = $_POST['valor_unit'];
-            
-        $model->save();
-
-        parent::setResponseAsJSON($model);
+        parent::setResponseAsJSON($res);
     }
 
     public static function delete()
